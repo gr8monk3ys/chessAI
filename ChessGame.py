@@ -4,9 +4,6 @@ This is the main game and where the board is drawn as well as the functionality 
 
 import pygame as p
 import ChessEngine
-import os
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 WIDTH = HEIGHT = 512
 DIMENSION = 8
