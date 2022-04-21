@@ -30,10 +30,17 @@ def main():
     gs = ChessEngine.GameState()
     loadImages()
     running = True
+
+    square_selected = () # Keeps track of the last click
+    player_click = []
     while running:
         for e in p.event.get():
             if e.type == p.QUIT:
                 running = False
+            elif e.type == p.MOUSEBUTTONDOWN:
+                location = p.mouse.get_pos()
+                col = location[0] // SQUARE_SIZE
+                row = location[1] // SQUARE_SIZE
         drawGameState(screen, gs)    
         clock.tick(MAX_FPS)
         p.display.flip()
